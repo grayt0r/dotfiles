@@ -17,3 +17,7 @@ alias ar='ant refresh'
 alias ae='ant explode'
 alias au='ant unexplode clean explode'
 alias j='jboss'
+
+alias m='mate'
+
+alias canary='open -a Google\ Chrome\ Canary --args --disable-web-security --allow-file-access-from-files'

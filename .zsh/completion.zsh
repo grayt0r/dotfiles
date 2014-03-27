@@ -1,4 +1,5 @@
-#autoload -U compinit && compinit                                                                                       
+# Enable git completion?
+autoload -U compinit && compinit                                                                                       
 #zmodload -i zsh/complist
 
 # man zshcontrib

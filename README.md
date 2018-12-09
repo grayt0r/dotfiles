@@ -1,8 +1,17 @@
-# zsh-config
+# dotfiles
 
-### Setup symlinks
+### Setup
 
 ```
-ln -s dev/code/zsh-config/.zshrc .zshrc
-ln -s dev/code/zsh-config/.zsh .zsh
+git clone https://github.com/grayt0r/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./setup
+```
+
+### Prompt
+
+https://github.com/sindresorhus/pure
+
+```
+npm install --global pure-prompt
 ```

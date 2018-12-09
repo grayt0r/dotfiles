@@ -1,0 +1,2 @@
+#!/bin/sh
+git for-each-ref --count=${1-10} --sort=-committerdate refs/heads/ --format='%(refname:short)'

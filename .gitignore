@@ -1,4 +1,2 @@
 .DS_Store
-.zsh/history
-.zsh/cache
 *.zwc*

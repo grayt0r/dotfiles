@@ -1,0 +1,9 @@
+#!/bin/sh
+# Usage: git-wip
+if [[ $1 = 'i' ]]; then
+  intellij $(git ls-files -m)
+elif [[ $1 = 'c' ]]; then
+  code $(git ls-files -m)
+else
+  $EDITOR $(git ls-files -m)
+fi

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Usage: git-edit-conflicts
+# Edit files in a conflict state.
+if [[ $1 = 'i' ]]; then
+  intellij $(git-conflicts)
+elif [[ $1 = 'c' ]]; then
+  code $(git-conflicts)
+else
+  $EDITOR $(git-conflicts)
+fi

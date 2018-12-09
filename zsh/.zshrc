@@ -41,7 +41,7 @@ export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -X
 # PROMPT #
 ##########
 
-autoload -U promptinit && promptinit
+autoload -U promptinit; promptinit
 prompt pure
 
 ##############

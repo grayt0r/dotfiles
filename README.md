@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/grayt0r/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./setup
+./setup.sh
 ```
 
 ### Prompt

@@ -1,4 +1,4 @@
-# !/bin/sh
+#!/bin/sh
 
 # This must be run from master
 git checkout master

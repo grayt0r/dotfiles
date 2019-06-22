@@ -16,7 +16,7 @@ setopt PROMPT_SUBST
 ###########
 
 # Move /usr/local/bin before /usr/bin for homebrew
-export PATH=$HOME/.dotfiles/bin:/usr/local/bin:$HOME/.jenv/bin:$PATH:$HOME/.yarn/bin
+export PATH=$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:$HOME/.jenv/bin:$PATH:$HOME/.yarn/bin
 
 # Enable color in grep
 export GREP_OPTIONS='--color=auto'

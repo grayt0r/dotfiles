@@ -1,0 +1,15 @@
+# !/bin/sh
+
+# This must be run from master
+git checkout master
+git pull
+
+# Update our list of remotes
+git fetch
+git remote prune origin
+
+# Remove local fully merged branches
+git branch --merged master | grep -v 'master$' | xargs git branch -d
+
+# Remove branches deleted on the remote
+git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -d

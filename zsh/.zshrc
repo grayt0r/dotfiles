@@ -26,6 +26,8 @@ export CLICOLOR=1
 export EDITOR='code'
 export DISABLE_AUTO_TITLE='true'
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Ruby setup :(
 if type "rbenv" > /dev/null; then
   eval "$(rbenv init -)"

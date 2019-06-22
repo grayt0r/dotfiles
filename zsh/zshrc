@@ -16,13 +16,15 @@ setopt PROMPT_SUBST
 ###########
 
 # Move /usr/local/bin before /usr/bin for homebrew
-export PATH=$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:$HOME/.jenv/bin:$PATH:$HOME/.yarn/bin
+PATH="$HOME/.jenv/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/.dotfiles/bin:$PATH"
+export -U PATH
 
 # Enable color in grep
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;37'
 
-export CLICOLOR=1
 export EDITOR='code'
 export DISABLE_AUTO_TITLE='true'
 
@@ -40,7 +42,9 @@ if type "jenv" > /dev/null; then
 fi
 
 # nodenv setup
-eval "$(nodenv init -)"
+if type "nodenv" > /dev/null; then
+  eval "$(nodenv init -)"
+fi
 
 # SBT options
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"

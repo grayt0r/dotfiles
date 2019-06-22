@@ -37,12 +37,18 @@ eval "$(nodenv init -)"
 
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
 
+# Google App Engine (brew install app-engine-java)
+export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
+
 ##########
 # PROMPT #
 ##########
 
 autoload -U promptinit; promptinit
 prompt pure
+
+# Disable pure prompt's default title behaviour
+prompt_pure_set_title() {}
 
 ##############
 # COMPLETION #
@@ -71,6 +77,7 @@ alias ar='cd ember && yarn install --frozen-lockfile && cd .. && yarn install --
 alias j='jboss-eap'
 alias t='yarn run ember exam --split=8 --parallel -r=tap'
 alias ets='yarn run ember server --environment=test --port=4201'
+alias kill-jboss='pkill -9 -f jboss'
 
 #############
 # FUNCTIONS #
@@ -118,23 +125,31 @@ HISTFILE=~/.zsh_history
 # HOOKS #
 #########
 
-function precmd {
-  # vcs_info
-  # Put the string "hostname::/full/directory/path" in the title bar:
+function precmd() {
+  # Set the window title to full/directory/path
   echo -ne "\e]2;$PWD\a"
 
-  # Put the parentdir/currentdir in the tab
+  # Set the tab title to parentdir/currentdir
   echo -ne "\e]1;$PWD:h:t/$PWD:t\a"
 }
 
-function set_running_app {
-  printf "\e]1; $PWD:t:$(history $HISTCMD | cut -b7- ) \a"
-}
+#############
+# ZSH SETUP #
+#############
 
-function preexec {
-  set_running_app
-}
+# Highlighting
+source `brew --prefix`/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-function postexec {
-  set_running_app
-}
+# As per `brew info zsh-completions`
+fpath=(`brew --prefix`/share/zsh-completions $fpath)
+
+# As per `brew info zsh-history-substring-search`
+source `brew --prefix`/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Configure zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=black,bold'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=black,bold'
+HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true

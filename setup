@@ -19,8 +19,11 @@ ln -sf $(pwd)/git/.gitignore_global ~/.gitignore_global
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-# Swap to zsh
-chsh -s $(which zsh)
-
-# Run update
+# Run the update script to install homebrew deps
 ./update
+
+# Swap to zsh
+# NOTE: this needs to be run after the update script
+if [ "$SHELL" != "$(which zsh)" ]; then
+  chsh -s $(which zsh)
+fi

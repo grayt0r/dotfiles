@@ -117,6 +117,10 @@ function port() {
   lsof -n -i:"$1" | grep LISTEN
 }
 
+function mkv2mp4 {
+  ffmpeg -i "$1" -codec copy "${1%.*}.mp4"
+}
+
 ###########
 # HISTORY #
 ###########

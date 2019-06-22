@@ -1,0 +1,25 @@
+[user]
+  name = Ross Grayton
+  email = rossgrayton@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[core]
+  excludesfile = ~/.gitignore_global
+
+[fetch]
+  prune = true
+
+[alias]
+  aa = add --all
+  br = branch
+  ci = commit
+  co = checkout
+  st = status -sb
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true

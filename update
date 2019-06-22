@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Retrieve env
+envFile=".dotfiles-env"
+env=$(cat "$envFile")
+
+echo "Installing shared brewfile..."
+brew bundle --file=homebrew/brewfile-all
+
+if [ "$env" == "home" ]; then
+  echo "Installing home brewfile..."
+  brew bundle --file=homebrew/brewfile-home
+elif [ "$env" == "work" ]; then
+  echo "Installing work brewfile..."
+  brew bundle --file=homebrew/brewfile-work
+fi

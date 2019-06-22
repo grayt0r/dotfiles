@@ -1,4 +1,11 @@
+#!/usr/bin/env bash
+
 echo "Setting up dotfiles in $(pwd)"
+
+# Store env if provided
+if [ "$1" == "home" ] || [ "$1" == "work" ] || [ "$1" == "none" ]; then
+    echo "$1" >| ".dotfiles-env"
+fi
 
 # Suppress "Last login" message
 touch ~/.hushlogin
@@ -13,3 +20,9 @@ git config --global core.excludesfile ~/.gitignore_global
 # Setup iTerm2
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Swap to zsh
+chsh -s $(which zsh)
+
+# Run update
+./update

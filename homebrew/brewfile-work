@@ -1,0 +1,14 @@
+tap 'zestia/formulae'
+
+brew 'ant'
+brew 'app-engine-java'
+brew 'docker'
+brew 'elasticsearch@6'
+brew 'haproxy'
+brew 'mysql@5.7'
+brew 'rbenv'
+brew 'redis'
+brew 'watchman'
+
+cask 'sequel-pro'
+cask 'virtualbox'

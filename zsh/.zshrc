@@ -27,10 +27,14 @@ export EDITOR='code'
 export DISABLE_AUTO_TITLE='true'
 
 # Ruby setup :(
-eval "$(rbenv init -)"
+if type "rbenv" > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # jenv setup
-eval "$(jenv init -)"
+if type "jenv" > /dev/null; then
+  eval "$(jenv init -)"
+fi
 
 # nodenv setup
 eval "$(nodenv init -)"

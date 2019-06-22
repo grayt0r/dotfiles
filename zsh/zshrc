@@ -26,6 +26,7 @@ export CLICOLOR=1
 export EDITOR='code'
 export DISABLE_AUTO_TITLE='true'
 
+# Homebrew cask options
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Ruby setup :(
@@ -41,6 +42,7 @@ fi
 # nodenv setup
 eval "$(nodenv init -)"
 
+# SBT options
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
 
 # Google App Engine (brew install app-engine-java)
@@ -73,7 +75,12 @@ alias ls='ls -GFha'
 # Same as above, but in long listing format
 alias ll='ls -GFhla'
 
+# Directory shortcuts
 alias dev='cd ~/dev/code'
+alias dot='cd ~/.dotfiles'
+
+# Print path
+alias path='print -l $path'
 
 # Capsule specific
 alias capsule='cd ~/dev/code/capsule'

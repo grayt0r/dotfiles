@@ -15,9 +15,6 @@ setopt PROMPT_SUBST
 # EXPORTS #
 ###########
 
-# Move /usr/local/bin before /usr/bin for homebrew
-PATH="$HOME/.jenv/bin:$PATH"
-PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/.dotfiles/bin:$PATH"
 export -U PATH
 

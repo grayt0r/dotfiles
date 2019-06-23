@@ -57,6 +57,13 @@ export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
 ##########
 
 autoload -U promptinit; promptinit
+
+PURE_PROMPT_SYMBOL=→
+
+zstyle :prompt:pure:path color cyan
+zstyle :prompt:pure:prompt:success color 242
+zstyle :prompt:pure:prompt:error color red
+
 prompt pure
 
 # Disable pure prompt's default title behaviour

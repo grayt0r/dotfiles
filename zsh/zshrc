@@ -165,6 +165,8 @@ function precmd() {
 # Highlighting
 source `brew --prefix`/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=015
+
 # As per `brew info zsh-completions`
 fpath=(`brew --prefix`/share/zsh-completions $fpath)
 

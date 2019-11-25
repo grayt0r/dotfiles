@@ -32,5 +32,3 @@ cask 'slack'
 cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'whatsapp'
-
-brew 'sbt'

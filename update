@@ -5,12 +5,12 @@ envFile=".dotfiles-env"
 env=$(cat "$envFile")
 
 echo "Installing shared brewfile..."
-brew bundle --file=homebrew/brewfile-all
+brew bundle --file=homebrew/brewfile-all --no-lock
 
 if [ "$env" == "home" ]; then
   echo "Installing home brewfile..."
-  brew bundle --file=homebrew/brewfile-home
+  brew bundle --file=homebrew/brewfile-home --no-lock
 elif [ "$env" == "work" ]; then
   echo "Installing work brewfile..."
-  brew bundle --file=homebrew/brewfile-work
+  brew bundle --file=homebrew/brewfile-work --no-lock
 fi

@@ -53,18 +53,18 @@ export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
 # PROMPT #
 ##########
 
-autoload -U promptinit; promptinit
+#autoload -U promptinit; promptinit
 
-PURE_PROMPT_SYMBOL=→
+#PURE_PROMPT_SYMBOL=→
 
-zstyle :prompt:pure:path color cyan
-zstyle :prompt:pure:prompt:success color 242
-zstyle :prompt:pure:prompt:error color red
+#zstyle :prompt:pure:path color cyan
+#zstyle :prompt:pure:prompt:success color 242
+#zstyle :prompt:pure:prompt:error color red
 
-prompt pure
+#prompt pure
 
 # Disable pure prompt's default title behaviour
-prompt_pure_set_title() {}
+#prompt_pure_set_title() {}
 
 if type "starship" > /dev/null; then
   eval "$(starship init zsh)"

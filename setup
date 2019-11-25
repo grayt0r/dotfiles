@@ -14,6 +14,8 @@ touch ~/.hushlogin
 ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 ln -sf $(pwd)/git/gitconfig ~/.gitconfig
 ln -sf $(pwd)/git/gitignore_global ~/.gitignore_global
+
+mkdir -p ~/.config
 ln -sf $(pwd)/starship/config.toml ~/.config/starship.toml
 
 # Setup iTerm2

@@ -99,6 +99,7 @@ alias j='jboss-eap'
 alias t='yarn run ember exam --split=8 --parallel -r=tap'
 alias ets='yarn run ember server --environment=test --port=4201'
 alias kill-jboss='pkill -9 -f jboss'
+alias tunnel='ssh -R 40025:127.0.0.1:8080 -N tunneler'
 
 #############
 # FUNCTIONS #

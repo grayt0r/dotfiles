@@ -10,5 +10,6 @@ brew 'rbenv'
 brew 'redis'
 brew 'watchman'
 
+cask 'android-studio'
 cask 'sequel-pro'
 cask 'virtualbox'

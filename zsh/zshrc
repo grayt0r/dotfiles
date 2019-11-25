@@ -66,6 +66,10 @@ prompt pure
 # Disable pure prompt's default title behaviour
 prompt_pure_set_title() {}
 
+if type "starship" > /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
 ##############
 # COMPLETION #
 ##############

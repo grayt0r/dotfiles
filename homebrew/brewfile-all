@@ -8,7 +8,7 @@ brew 'jenv'
 brew 'jq'
 brew 'nodenv'
 brew 'ripgrep'
-brew 'starship
+brew 'starship'
 brew 'tldr'
 brew 'zsh'
 brew 'zsh-completions'

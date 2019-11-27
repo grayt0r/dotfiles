@@ -1,0 +1,23 @@
+{
+  "prettier.singleQuote": true,
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "editor.findMatchBackground": "#ffffff",
+    "editorCursor.foreground": "#69faff"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "html.format.enable": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "window.zoomLevel": 0,
+  "liveshare.featureSet": "insiders",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Cascadia Code', Consolas, ‘Courier New’, monospace",
+  "editor.fontSize": 13,
+}

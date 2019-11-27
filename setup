@@ -28,7 +28,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 # Setup vscode
 # NOTE: needs to run after brew
 ln -sf $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -sf $(pwd)/vscode/snippets ~/Library/Application\ Support/Code/User
+ln -sf $(pwd)/vscode/snippets ~/Library/Application\ Support/Code/User/
 
 # Swap to zsh
 # NOTE: this needs to be run after the update script

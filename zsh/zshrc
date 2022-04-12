@@ -15,7 +15,10 @@ setopt PROMPT_SUBST
 # EXPORTS #
 ###########
 
-PATH="$HOME/.dotfiles/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+
+# TODO: need to add /usr/local/sbin?
+PATH="$VOLTA_HOME/bin:$HOME/.dotfiles/bin:$PATH"
 export -U PATH
 
 # Enable color in grep
@@ -38,33 +41,18 @@ if type "jenv" > /dev/null; then
   eval "$(jenv init -)"
 fi
 
+# TODO: remove
 # nodenv setup
 if type "nodenv" > /dev/null; then
   eval "$(nodenv init -)"
 fi
 
 # SBT options
-export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
-
-# Google App Engine (brew install app-engine-java)
-export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
+export SBT_OPTS="-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
 
 ##########
 # PROMPT #
 ##########
-
-#autoload -U promptinit; promptinit
-
-#PURE_PROMPT_SYMBOL=→
-
-#zstyle :prompt:pure:path color cyan
-#zstyle :prompt:pure:prompt:success color 242
-#zstyle :prompt:pure:prompt:error color red
-
-#prompt pure
-
-# Disable pure prompt's default title behaviour
-#prompt_pure_set_title() {}
 
 if type "starship" > /dev/null; then
   eval "$(starship init zsh)"
@@ -94,16 +82,11 @@ alias dot='cd ~/.dotfiles'
 # Print path
 alias path='print -l $path'
 
+# TODO: remove
 # Capsule specific
-alias capsule='cd ~/dev/code/capsule'
-alias ae='ant explode'
-alias au='ant unexplode clean explode'
-alias ar='cd ember && npm install && cd .. && npm install && ant refresh'
 alias j='jboss-eap'
-alias t='yarn run ember exam --split=8 --parallel -r=tap'
-alias ets='yarn run ember server --environment=test --port=4201'
 alias kill-jboss='pkill -9 -f jboss'
-alias tunnel='ssh -R 40025:127.0.0.1:8080 -N tunneler'
+alias db='cd /Users/ross/dev/code/zestia-ssm;./zestia-ssm -n infrastructure-monitoring'
 
 #############
 # FUNCTIONS #

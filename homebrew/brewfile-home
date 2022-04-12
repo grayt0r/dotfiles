@@ -1,4 +1,12 @@
+tap 'homebrew/cask-drivers'
+
 brew 'ffmpeg'
 brew 'youtube-dl'
 
+cask 'airflow'
+cask 'deluge'
+cask 'ipvanish-vpn'
+cask 'logitech-g-hub'
+cask 'nvidia-geforce-now'
 cask 'mpv'
+cask 'steelseries-exactmouse-tool'

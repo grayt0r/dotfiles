@@ -1,5 +1,4 @@
 {
-  "prettier.singleQuote": true,
   "editor.tabSize": 2,
   "workbench.colorCustomizations": {
     "editor.findMatchBackground": "#ffffff",
@@ -15,9 +14,22 @@
   },
   "html.format.enable": false,
   "workbench.colorTheme": "One Dark Pro",
-  "window.zoomLevel": 0,
   "liveshare.featureSet": "insiders",
   "editor.fontLigatures": true,
   "editor.fontFamily": "'Cascadia Code', Consolas, ‘Courier New’, monospace",
   "editor.fontSize": 13,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabCompletion": "onlySnippets",
+  "javascript.validate.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "extensions.ignoreRecommendations": false,
+  "[handlebars]": {
+    "editor.defaultFormatter": "mfeckies.handlebars-formatter"
+    // "editor.suggest.insertMode": "replace"
+  },
+  "security.workspace.trust.untrustedFiles": "open"
 }

@@ -18,7 +18,7 @@ setopt PROMPT_SUBST
 export VOLTA_HOME="$HOME/.volta"
 
 # TODO: need to add /usr/local/sbin?
-PATH="$VOLTA_HOME/bin:$HOME/.dotfiles/bin:$PATH"
+PATH="$VOLTA_HOME/bin:$HOME/.dotfiles/bin:/usr/local/sbin:$PATH"
 export -U PATH
 
 # Enable color in grep
@@ -41,14 +41,8 @@ if type "jenv" > /dev/null; then
   eval "$(jenv init -)"
 fi
 
-# TODO: remove
-# nodenv setup
-if type "nodenv" > /dev/null; then
-  eval "$(nodenv init -)"
-fi
-
 # SBT options
-export SBT_OPTS="-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
+#export SBT_OPTS="-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M -Duser.timezone=GMT"
 
 ##########
 # PROMPT #
@@ -82,12 +76,6 @@ alias dot='cd ~/.dotfiles'
 # Print path
 alias path='print -l $path'
 
-# TODO: remove
-# Capsule specific
-alias j='jboss-eap'
-alias kill-jboss='pkill -9 -f jboss'
-alias db='cd /Users/ross/dev/code/zestia-ssm;./zestia-ssm -n infrastructure-monitoring'
-
 #############
 # FUNCTIONS #
 #############
@@ -115,7 +103,7 @@ function open-files {
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
   local port="${1:-8000}"
-  open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
+  open "http://localhost:${port}/" && python3 -m http.server "$port"
 }
 
 function port() {
@@ -130,9 +118,16 @@ function mkv2mp4 {
 # HISTORY #
 ###########
 
-HISTSIZE=3000
-SAVEHIST=3000
 HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+
+# Write to the history file immediately, not when the shell exits.
+setopt INC_APPEND_HISTORY
+# Share history between all sessions.
+setopt SHARE_HISTORY
+# Delete old recorded entry if new entry is a duplicate.
+setopt HIST_IGNORE_ALL_DUPS
 
 #########
 # HOOKS #

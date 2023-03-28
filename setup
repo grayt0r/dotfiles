@@ -4,7 +4,7 @@ echo "Setting up dotfiles in $(pwd)"
 
 # Store env if provided
 if [ "$1" == "home" ] || [ "$1" == "work" ] || [ "$1" == "none" ]; then
-    echo "$1" >| ".dotfiles-env"
+  echo "$1" >| ".dotfiles-env"
 fi
 
 # Suppress "Last login" message
@@ -27,11 +27,16 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # Setup vscode
 # NOTE: needs to run after brew
-ln -sf $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -sf $(pwd)/vscode/snippets ~/Library/Application\ Support/Code/User/
+# TODO: this should be handled by vscode settings sync now?
+#ln -sf $(pwd)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+#ln -sf $(pwd)/vscode/snippets ~/Library/Application\ Support/Code/User/
 
-# Swap to zsh
+# Save Homebrew’s installed location.
+BREW_PREFIX=$(brew --prefix)
+
+# Switch to using brew-installed zsh as default shell
 # NOTE: this needs to be run after the update script
-if [ "$SHELL" != "$(which zsh)" ]; then
-  chsh -s $(which zsh)
-fi
+if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/zsh";
+fi;

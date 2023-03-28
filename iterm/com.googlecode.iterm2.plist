@@ -221,6 +221,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>51BC81ED-F931-4C45-BB6C-89264FEAE0B4</string>
+	<key>DisableWindowSizeSnap</key>
+	<integer>1</integer>
 	<key>DrawOutlineAroundCursor</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -912,11 +914,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>DroidSansMonoForPowerline 12</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DroidSansMonoForPowerline 12</string>
+			<string>CascadiaCodePL-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1056,7 +1058,7 @@
 			<key>Window Type</key>
 			<integer>13</integer>
 			<key>Working Directory</key>
-			<string>/Users/ross/dev/code/capsule</string>
+			<string>/Users/ross/dev/code</string>
 		</dict>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
